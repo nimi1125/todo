@@ -32,7 +32,13 @@
                     </td>
                     <td>{{ $todo->due_date }}</td>
                     <td><a href="#" class="btn btn-secondary">編集</a></td>
-                    <td><a href="#" class="btn btn-dark">削除</a></td>
+                    <td>
+                        <form method="POST" action="{{ route('todo.destroy',$todo) }}">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-dark" onclick="return confirm('本当に削除しますか？')">削除</button>
+                    </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -23,11 +23,18 @@ class TodoController extends Controller
 
     public function store(TodoRequest $request) // 修正されたリクエストクラス
     {
-        // バリデーション済みのデータを利用してTodoを作成
         Todo::create($request->except('_token'));
 
-        // リダイレクトしてTodoの一覧ページを表示
         return redirect()
-            ->route('todo.index');
+            ->route('todo.create');
+    }
+
+    public function destroy($id)
+    {
+        $todo = todo::findOrFail($id);
+        $todo->delete();
+        return redirect()
+            ->route('todo.index')
+            ->with('status','ブックマークを削除しました。');
     }
 }
