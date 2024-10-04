@@ -26,7 +26,7 @@ class TodoController extends Controller
         Todo::create($request->except('_token'));
 
         return redirect()
-            ->route('todo.create');
+            ->route('todo.index');
     }
 
     public function destroy($id)

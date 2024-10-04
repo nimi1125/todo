@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/todo', [TodoController::class, 'index']);
+Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
 Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create');
 Route::post('/todo/store', [TodoController::class, 'store'])->name('todo.store');
-Route::post('/todo/destroy', [TodoController::class, 'destroy'])->name('todo.destroy');
+Route::delete('/todo/destroy/{id}', [TodoController::class, 'destroy'])->name('todo.destroy');
