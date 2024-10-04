@@ -30,8 +30,7 @@
                     <td>
                         <span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span>
                     </td>
-                    <td>{{ $todo->due_date }}</td>
-                    <td><a href="#" class="btn btn-secondary">編集</a></td>
+                    <td>{{ date('Y-m-d', strtotime($todo->due_date)) }}</td>                    <td><a href="#" class="btn btn-secondary">編集</a></td>
                     <td>
                         <form method="POST" action="{{ route('todo.destroy',$todo) }}">
                         @method('DELETE')

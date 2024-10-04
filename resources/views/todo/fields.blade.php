@@ -8,7 +8,11 @@
 <div class="form-group row">
     <label for="inputstatus" class="col-sm-2 col-form-label">進行度</label>
     <div class="col-sm-10">
-        <input type="text" name="status" value="{{ $todo->status ?? '' }}" class="form-control" id="inputstatus">
+        <select id=”inputstatus” name="status" value="{{ $todo->status ?? '' }}" class="form-control">
+            <option value="1">未着手</option>
+            <option value="2">着手中</option>
+            <option value="3">完了</option>
+        </select>
     </div>
 </div>
 

@@ -14,6 +14,7 @@ class TodoController extends Controller
 
         // ビューを表示する
         return view('todo.index', compact('todos'));
+
     }
 
     public function create()
