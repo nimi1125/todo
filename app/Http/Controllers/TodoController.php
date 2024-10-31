@@ -31,24 +31,28 @@ class TodoController extends Controller
 
     public function destroy($id)
     {
-        $todo = todo::findOrFail($id);
+        $todo = Todo::findOrFail($id);
         $todo->delete();
         return redirect()
             ->route('todo.index')
             ->with('status','ブックマークを削除しました。');
     }
 
-    public function edit(todo $todo)
+    public function edit($id)
     {
-        return view('todo.create',compact('todo'));
+        $todo = Todo::findOrFail($id);
+        return view('todo.edit', compact('todo'));
     }
 
-    public function update(int $id)
-    {
-        $todo = Todo::find($id);
+    public function update(TodoRequest $request, $id)
+{
+    $todo = Todo::findOrFail($id);
+    $todo->title = $request->title;
+    $todo->status = $request->status;
+    $todo->detail = $request->detail;
+    $todo->save();
 
-        return view('todo/edit', [
-            'todo' => $todo,
-        ]);
-    }
+    return redirect()->route('todo.index')->with('status', 'ブックマークを更新しました。');
+}
+
 }
