@@ -1,0 +1,26 @@
+
+ul{
+    list-style-type:none;
+}
+
+.errorMessage{
+    color: red;
+}
+
+.btn01{
+    background: #3cacce;
+    border: solid 1px #3cacce;
+    display: inline-block;
+    padding: 3px 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn02{
+    background: #fff;
+    border: solid 1px #3cacce;
+    display: inline-block;
+    padding: 3px 5px;
+    color: #3cacce;
+    font-weight: bold;
+}

@@ -1,2 +1,7 @@
 import './bootstrap';
-import '../stylesheets/application.scss';
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();

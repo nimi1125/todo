@@ -1,3 +1,12 @@
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li class="errorMessage">{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif 
 <div class="form-group row">
     <label for="inputTitle" class="col-sm-2 col-form-label">タイトル</label>
     <div class="col-sm-10">

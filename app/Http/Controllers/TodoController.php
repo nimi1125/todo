@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
-use App\Http\Requests\TodoRequest; // バリデーションリクエストクラスをインポート
+use App\Http\Requests\TodoRequest; 
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
@@ -50,6 +50,7 @@ class TodoController extends Controller
     $todo->title = $request->title;
     $todo->status = $request->status;
     $todo->detail = $request->detail;
+    $todo->due_date = $request->due_date;
     $todo->save();
 
     return redirect()->route('todo.index')->with('status', 'ブックマークを更新しました。');

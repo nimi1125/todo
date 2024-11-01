@@ -14,8 +14,22 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:255', // タイトルの必須ルール
-            'description' => 'nullable|string',   // 説明は任意
+            'title' => 'required|string|max:255', 
+            'detail' => 'nullable|string|max:500',
+            'due_date' => 'required|date|after_or_equal:today',
+            'status' => 'required|in:1,2,3',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'title.required' => 'タイトルは必須です。',
+            'title.max' => 'タイトルは50文字以内で入力してください。',
+            'detail.max' => '詳細は500文字以内で入力してください。',
+            'due_date.required' => '期日は必須です。',
+            'due_date.after_or_equal' => '期日は今日以降の日付を選択してください。',
+            'status.required' => '状態を選択してください。',
+            'status.in' => '状態は「未着手」「着手中」「完了」から選択してください。',
         ];
     }
 }
