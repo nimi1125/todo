@@ -13,7 +13,7 @@ class Todo extends Model
     protected $table = 'todo';
 
     // マスアサインメント可能なフィールド
-    protected $fillable = ['title', 'status', 'detail']; // 保存したいフィールドを追加
+    protected $fillable = ['title', 'detail', 'due_date', 'status']; // 保存したいフィールドを追加
 
     // ステータス（状態）定義
     const STATUS = [

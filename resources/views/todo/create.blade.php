@@ -1,12 +1,10 @@
 <x-app-layout>
-
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="card">
-                    <div class="card-header">タスク追加</div>
-                    <div class="card-body">
+    <div class="container mx-auto">
+        <div class="flex justify-center">
+            <div class="w-full max-w-4xl">
+                <div class="bg-white shadow rounded-lg">
+                    <div class="bg-gray-100 px-6 py-4 font-bold text-lg">タスク追加</div>
+                    <div class="p-6">
                         <form method="POST" action="{{ route('todo.store') }}">
                             @csrf
                             @include('todo.fields')

@@ -38,8 +38,10 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <h1 class="">todoリストを作成する</h1>
-                <a href="{{ route('login') }}" class="btn01">ログイン</a>
-                <a href="{{ route('register') }}" class="mt-2 btn01">アカウント作成</a>
+                <div class="flex">
+                    <a href="{{ route('login') }}" class="btn01">ログイン</a>
+                    <a href="{{ route('register') }}" class="btn01">アカウント作成</a>
+                </div>
             </div>
         </div>
     </body>

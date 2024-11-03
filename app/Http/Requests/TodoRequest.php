@@ -15,7 +15,7 @@ class TodoRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255', 
-            'detail' => 'nullable|string|max:500',
+            'detail' => 'required|string|max:500',
             'due_date' => 'required|date|after_or_equal:today',
             'status' => 'required|in:1,2,3',
         ];
@@ -25,6 +25,7 @@ class TodoRequest extends FormRequest
         return [
             'title.required' => 'タイトルは必須です。',
             'title.max' => 'タイトルは50文字以内で入力してください。',
+            'detail.required' => '詳細は必須です。',
             'detail.max' => '詳細は500文字以内で入力してください。',
             'due_date.required' => '期日は必須です。',
             'due_date.after_or_equal' => '期日は今日以降の日付を選択してください。',

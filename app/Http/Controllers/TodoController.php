@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+    public function dashboard()
+    {
+        // Todoのデータを取得する処理
+        $todos = Todo::all();
+
+        return view('dashboard', compact('todos'));
+
+    }
+
     public function index()
     {
         // Todoのデータを取得する処理
